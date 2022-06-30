@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyles = createGlobalStyle`
-@import url(${({ theme }) => theme.fonts.imports});
+const GlobalStyles = createGlobalStyle`
 
 *{
   margin:0;
@@ -19,7 +18,7 @@ h1{
   position: relative;
   text-align: center;
   margin-bottom: 5rem;
-  font-family: ${({ theme }) => theme.fonts.fontA};
+  font-family:'Oswald', sans-serif;
 }
 
 #root{
@@ -67,3 +66,5 @@ a{
 
 
 `;
+
+export default GlobalStyles;

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const StyledQuoteBox = styled.section`
-  @import url(${({ theme }) => theme.fonts.imports});
   width: 30rem;
   max-width: 70%;
   overflow: visible;
@@ -10,7 +9,7 @@ export const StyledQuoteBox = styled.section`
   border-radius: 10px;
   margin: auto auto 0 auto;
   background: ${({ theme }) => theme.colors.card};
-  font-family: ${({ theme }) => theme.fonts.fontA};
+  font-family: 'Oswald', sans-serif;
   border: solid ${({ theme }) => theme.colors.pop} 1px;
   transition: all ease-in-out 0s;
   box-shadow: 10px 10px 30px #0000001d;
@@ -23,7 +22,7 @@ export const StyledQuoteBox = styled.section`
     font-size: 0.75rem;
     color: ${({ theme }) => theme.colors.pop};
     letter-spacing: 0.1rem;
-    font-family: ${({ theme }) => theme.fonts.fontB};
+    font-family: 'Cormorant Garamond', serif;
   }
 
   h1 {
