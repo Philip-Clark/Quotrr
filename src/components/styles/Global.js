@@ -1,20 +1,23 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
-@import url(${({ theme }) => theme.fonts.imports});
 
 *{
-  color:${({ theme }) => theme.colors.text};
+  color:${({ theme }) => theme.colors.white};
+  margin:0;
+  transition: all 0.5s ease;
   &::selection{
-    background-color: ${({ theme }) => theme.colors.body};
+    background-color: #152023;
   }
 }
-
 h1{
-  font-family: ${({ theme }) => theme.fonts.fontA};
-  margin-bottom: 5rem;
-  text-align: center;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 4rem;
+  text-align: center;
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+  z-index: 10;
 }
 
 #root{
@@ -22,38 +25,40 @@ h1{
 }
 
 body{
-  font-family: ${({ theme }) => theme.fonts.fontB};
+  margin:0;
   background: ${({ theme }) => theme.colors.body};
-  overflow: visible;
   height:100vh;
   padding: 0;
-  margin:0;
-}
-
-footer{
-  align-content: space-evenly;
-  justify-content: center;
-  flex-direction: row;
-  text-align: center;
-  position: fixed;
-  flex-wrap: wrap;
-  bottom: 0.5rem;
-  display: flex;
-  width: 100vw;
-
-  a{
-  margin: 0 0.625rem;
-  opacity: 80%;
-  }
+  overflow: visible;
+  
 }
 
 @media (min-width: 900px) {
   body{
     overflow-y:hidden;
   }
-  h1{
-  margin-top: 10rem;
-
-  }
+  
 }
+
+footer{
+  position: fixed;
+  bottom: 0.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  flex-wrap: wrap;
+  align-content: space-evenly;
+  justify-content: center;
+  
+}
+
+a{
+  margin: 0 0.625rem;
+  opacity: 30%;
+  color:${({ theme }) => theme.colors.white};
+}
+
+
+
 `;
