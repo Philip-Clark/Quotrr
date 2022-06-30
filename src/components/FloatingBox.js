@@ -16,7 +16,7 @@ export default function FloatingBox(props) {
 
   return (
     <StyledFloatingBox>
-      <div className={props.data ? 'fadeIn' : 'fadeOut'}>
+      <div className={props.dataLoaded ? 'fadeIn' : 'fadeOut'}>
         <h3>- {props.author.replaceAll('"', '')}</h3>
         <h1>{props.text}</h1>
       </div>

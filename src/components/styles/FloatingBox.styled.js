@@ -31,7 +31,7 @@ export const StyledFloatingBox = styled.section`
   h1 {
     margin: 2rem auto;
     font-size: 1.5rem;
-    color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.text};
   }
 
   #line {

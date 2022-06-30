@@ -1,23 +1,22 @@
 import { GlobalStyles } from './components/styles/Global';
 import { ThemeProvider } from 'styled-components';
 import { theme } from './components/styles/theme';
-import QuoteBox from './components/QuoteBox';
+import QuoteBox from './components/FloatingBox';
 import { useEffect, useState } from 'react';
 
 function App() {
-  const [dataLoaded, setDataLoaded] = useState(false);
   const [author, getAuthor] = useState('');
   const [text, getText] = useState('');
   const axios = require('axios');
 
-  const [dataIn, setDataIn] = useState(false);
+  const [dataLoaded, setDataLoaded] = useState(false);
 
   useEffect(() => {
     getQuote();
   }, []);
 
   function getQuote() {
-    setDataIn(false);
+    setDataLoaded(false);
     const options = {
       method: 'GET',
       url: 'https://programming-quotes-api.herokuapp.com/Quotes/random',
@@ -31,7 +30,7 @@ function App() {
         console.log(`author : ${author}`);
         console.log(`Text : ${text}`);
         console.log(response.data);
-        setDataIn(true);
+        setDataLoaded(true);
       })
       .catch(function () {});
   }

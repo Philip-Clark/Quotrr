@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyles = createGlobalStyle`
 
 *{
-  color:${({ theme }) => theme.colors.white};
+  color:${({ theme }) => theme.colors.text};
   margin:0;
   transition: all 0.5s ease;
   &::selection{
@@ -56,7 +56,7 @@ footer{
 a{
   margin: 0 0.625rem;
   opacity: 30%;
-  color:${({ theme }) => theme.colors.white};
+  color:${({ theme }) => theme.colors.text};
 }
 
 
