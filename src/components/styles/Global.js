@@ -1,23 +1,25 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
+@import url(${({ theme }) => theme.fonts.imports});
 
 *{
-  color:${({ theme }) => theme.colors.text};
   margin:0;
+  color:${({ theme }) => theme.colors.text};
   transition: all 0.5s ease;
+
   &::selection{
     background-color: #152023;
   }
 }
 h1{
-  position: relative;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 4rem;
-  text-align: center;
-  margin-top: 10rem;
-  margin-bottom: 5rem;
   z-index: 10;
+  font-size: 4rem;
+  margin-top: 1rem;
+  position: relative;
+  text-align: center;
+  margin-bottom: 5rem;
+  font-family: ${({ theme }) => theme.fonts.fontA};
 }
 
 #root{
@@ -26,10 +28,10 @@ h1{
 
 body{
   margin:0;
-  background: ${({ theme }) => theme.colors.body};
-  height:100vh;
   padding: 0;
+  height:100vh;
   overflow: visible;
+  background: ${({ theme }) => theme.colors.body};
   
 }
 
@@ -37,25 +39,28 @@ body{
   body{
     overflow-y:hidden;
   }
+  h1{
+    margin-top: 10rem;
+  }
   
 }
 
 footer{
-  position: fixed;
-  bottom: 0.5rem;
-  text-align: center;
-  display: flex;
-  flex-direction: row;
   width: 100vw;
+  display: flex;
+  bottom: 0.5rem;
+  position: fixed;
   flex-wrap: wrap;
-  align-content: space-evenly;
+  text-align: center;
+  flex-direction: row;
   justify-content: center;
+  align-content: space-evenly;
   
 }
 
 a{
-  margin: 0 0.625rem;
   opacity: 30%;
+  margin: 0 0.625rem;
   color:${({ theme }) => theme.colors.text};
 }
 

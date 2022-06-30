@@ -1,31 +1,29 @@
 import styled from 'styled-components';
 
-export const StyledFloatingBox = styled.section`
-  background: ${({ theme }) => theme.colors.card};
-  border-radius: 10px;
-  box-shadow: 10px 10px 30px #0000001d;
-  border: solid ${({ theme }) => theme.colors.pop} 1px;
-  max-width: 70%;
+export const StyledQuoteBox = styled.section`
+  @import url(${({ theme }) => theme.fonts.imports});
   width: 30rem;
-  /* width: max-content; */
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-  transition: all ease-in-out 0s;
-  padding: 2rem 1rem;
-  margin: auto;
-  margin-bottom: 0;
-  padding-bottom: 0;
+  max-width: 70%;
   overflow: visible;
-  /* transform: translateY(10vh) translateY(-50%); */
+  text-align: center;
+  padding: 2rem 1rem 0 2rem;
+  border-radius: 10px;
+  margin: auto auto 0 auto;
+  background: ${({ theme }) => theme.colors.card};
+  font-family: ${({ theme }) => theme.fonts.fontA};
+  border: solid ${({ theme }) => theme.colors.pop} 1px;
+  transition: all ease-in-out 0s;
+  box-shadow: 10px 10px 30px #0000001d;
+
   @media (min-width: 900px) {
-    padding: 2rem 5rem;
-    padding-bottom: 0;
+    padding: 2rem 5rem 0 5rem;
   }
   h3 {
     margin: 0 auto;
     font-size: 0.75rem;
-    letter-spacing: 0.1rem;
     color: ${({ theme }) => theme.colors.pop};
+    letter-spacing: 0.1rem;
+    font-family: ${({ theme }) => theme.fonts.fontB};
   }
 
   h1 {
@@ -38,25 +36,24 @@ export const StyledFloatingBox = styled.section`
     width: 100%;
     height: 1px;
     margin-bottom: 0;
-    background-color: #ffffff1d;
     border-radius: 5px;
+    background-color: ${({ theme }) => theme.colors.body};
   }
 
   button {
-    transition: all 0.1s ease;
     width: 4rem;
     height: 4rem;
-    background-color: ${({ theme }) => theme.colors.pop};
-    border-radius: 300rem;
-    margin: 0 auto;
-
-    transform: translateY(60%);
-    box-shadow: 10px 10px 5x #0000007e;
     border: none;
-    background-image: url('r.png');
+    margin: 0 auto;
     background-size: 50%;
+    border-radius: 300rem;
+    transition: all 0.1s ease;
+    transform: translateY(60%);
     background-position: center;
     background-repeat: no-repeat;
+    background-image: url('r.png');
+    background-color: ${({ theme }) => theme.colors.pop};
+    box-shadow: 10px 10px 5x #0000007e;
 
     &:hover {
       transform: translateY(60%) scale(0.9);
@@ -97,20 +94,4 @@ export const StyledFloatingBox = styled.section`
       transform: scale(0.5);
     }
   }
-
-  .refresh {
-    animation: refresh 1s;
-  }
-
-  /* @keyframes refresh {
-    0% {
-      background-image: url('r.gif');
-    }
-    99% {
-      background-image: url('r.gif');
-    }
-    100% {
-      background-image: url('r.png');
-    }
-  } */
 `;

@@ -1,15 +1,19 @@
 import { GlobalStyles } from './components/styles/Global';
 import { ThemeProvider } from 'styled-components';
 import { theme } from './components/styles/theme';
-import QuoteBox from './components/FloatingBox';
+import QuoteBox from './components/QuoteBox';
 import { useEffect, useState } from 'react';
 
 function App() {
-  const [author, getAuthor] = useState('');
-  const [text, getText] = useState('');
   const axios = require('axios');
-
+  const [text, getText] = useState('');
+  const [author, getAuthor] = useState('');
   const [dataLoaded, setDataLoaded] = useState(false);
+
+  const options = {
+    method: 'GET',
+    url: 'https://programming-quotes-api.herokuapp.com/Quotes/random',
+  };
 
   useEffect(() => {
     getQuote();
@@ -17,22 +21,16 @@ function App() {
 
   function getQuote() {
     setDataLoaded(false);
-    const options = {
-      method: 'GET',
-      url: 'https://programming-quotes-api.herokuapp.com/Quotes/random',
-    };
     axios
       .request(options)
       .then(function (response) {
         getAuthor(JSON.stringify(response.data.author));
         getText(JSON.stringify(response.data.en));
-        console.log(response.data);
-        console.log(`author : ${author}`);
-        console.log(`Text : ${text}`);
-        console.log(response.data);
         setDataLoaded(true);
       })
-      .catch(function () {});
+      .catch(function (error) {
+        console.error(error);
+      });
   }
 
   return (
@@ -50,7 +48,7 @@ function App() {
       </>
       <footer>
         <a href="https://icons8.com/">Icons From Icons8</a>
-        <a href="https://icons8.com/">Made By Philip Clark</a>
+        <a href="https://github.com/Philip-Clark">Made By Philip Clark</a>
       </footer>
     </ThemeProvider>
   );
