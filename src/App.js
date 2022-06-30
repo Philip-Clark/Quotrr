@@ -58,8 +58,11 @@ function App() {
           setData={setDataIn}
           data={dataIn}
         ></FloatingBox>
-        <a href="https://icons8.com/">Icons From Icons8</a>
       </>
+      <footer>
+        <a href="https://icons8.com/">Icons From Icons8</a>
+        <a href="https://icons8.com/">Made By Philip Clark</a>
+      </footer>
     </ThemeProvider>
   );
 }

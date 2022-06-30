@@ -5,19 +5,22 @@ export const StyledFloatingBox = styled.section`
   border-radius: 10px;
   box-shadow: 10px 10px 30px #0000001d;
   border: solid ${({ theme }) => theme.colors.pop} 1px;
-  max-width: 75%;
+  max-width: 70%;
   width: 30rem;
   /* width: max-content; */
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   transition: all ease-in-out 0s;
-  padding: 2rem 5rem;
+  padding: 2rem 1rem;
   margin: auto;
   margin-bottom: 0;
   padding-bottom: 0;
   overflow: visible;
   /* transform: translateY(10vh) translateY(-50%); */
-
+  @media (min-width: 900px) {
+    padding: 2rem 5rem;
+    padding-bottom: 0;
+  }
   h3 {
     margin: 0 auto;
     font-size: 0.75rem;

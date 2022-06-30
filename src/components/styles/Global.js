@@ -20,20 +20,41 @@ h1{
   z-index: 10;
 }
 
+#root{
+  height: 100vh;
+}
 
 body{
   margin:0;
   background: ${({ theme }) => theme.colors.body};
   height:100vh;
-  overflow: hidden;
   padding: 0;
+  overflow: visible;
+  
+}
+
+@media (min-width: 900px) {
+  body{
+    overflow-y:hidden;
+  }
+  
+}
+
+footer{
+  position: fixed;
+  bottom: 0.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  flex-wrap: wrap;
+  align-content: space-evenly;
+  justify-content: center;
+  
 }
 
 a{
-  position: absolute;
-  bottom: 0.5rem;
-  text-align: center;
-  width: 100%;
+  margin: 0 0.625rem;
   opacity: 30%;
   color:${({ theme }) => theme.colors.white};
 }
