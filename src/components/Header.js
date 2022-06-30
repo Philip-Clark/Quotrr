@@ -1,9 +1,0 @@
-import { StyledHeader } from './styles/Header.styled.js';
-
-export default function Header() {
-  return (
-    <StyledHeader>
-      <h1>Header</h1>
-    </StyledHeader>
-  );
-}

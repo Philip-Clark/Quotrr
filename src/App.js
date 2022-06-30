@@ -1,49 +1,37 @@
 import { GlobalStyles } from './components/styles/Global';
-import FloatingBox from './components/FloatingBox';
-import { Container } from './components/styles/container.styled.js';
 import { ThemeProvider } from 'styled-components';
-import { useCallback, useEffect, useState } from 'react';
-
-const theme = {
-  colors: {
-    card: '#324348',
-    body: '#1f2e32',
-    pop: '#14e2a1',
-    white: '#dbdad2',
-  },
-};
-
-// Test
+import { theme } from './components/styles/theme';
+import QuoteBox from './components/QuoteBox';
+import { useEffect, useState } from 'react';
 
 function App() {
-  const axios = require('axios');
+  const [dataLoaded, setDataLoaded] = useState(false);
   const [author, getAuthor] = useState('');
   const [text, getText] = useState('');
+  const axios = require('axios');
 
-  const [dataIn, setDataIn] = useState(false);
+  const options = {
+    method: 'GET',
+    url: 'https://programming-quotes-api.herokuapp.com/Quotes/random',
+  };
 
   useEffect(() => {
     getQuote();
   }, []);
 
   function getQuote() {
-    setDataIn(false);
-    const options = {
-      method: 'GET',
-      url: 'https://programming-quotes-api.herokuapp.com/Quotes/random',
-    };
+    setDataLoaded(false);
+
     axios
       .request(options)
       .then(function (response) {
         getAuthor(JSON.stringify(response.data.author));
         getText(JSON.stringify(response.data.en));
-        console.log(response.data);
-        console.log(`author : ${author}`);
-        console.log(`Text : ${text}`);
-        console.log(response.data);
-        setDataIn(true);
+        setDataLoaded(true);
       })
-      .catch(function () {});
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
   return (
@@ -51,17 +39,17 @@ function App() {
       <>
         <GlobalStyles />
         <h1>Quotrr</h1>
-        <FloatingBox
+        <QuoteBox
           author={author}
           text={text}
           getQuote={getQuote}
-          setData={setDataIn}
-          data={dataIn}
-        ></FloatingBox>
+          setDataLoaded={setDataLoaded}
+          dataLoaded={dataLoaded}
+        ></QuoteBox>
       </>
       <footer>
         <a href="https://icons8.com/">Icons From Icons8</a>
-        <a href="https://icons8.com/">Made By Philip Clark</a>
+        <a href="https://github.com/Philip-Clark">Made By Philip Clark</a>
       </footer>
     </ThemeProvider>
   );
