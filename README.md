@@ -2,11 +2,11 @@
 
 # Quotrr
 <br>
- 
-A simple web app that uses a Restful api to display quotes. 
+Pronounced "Quoter" this is
+a simple web app that consumes a Restful api to display quotes. 
 <br>Thrown together in an afternoon, this project may get some love later on.
 
-
+### Try it out here : https://philip-clark.github.io/Quotrr/
 
 
 <br>
