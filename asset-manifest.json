@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/Quotrr/static/js/main.fead3644.js",
+    "main.js": "/Quotrr/static/js/main.0d0bb914.js",
     "static/js/787.1ed0c42c.chunk.js": "/Quotrr/static/js/787.1ed0c42c.chunk.js",
     "index.html": "/Quotrr/index.html",
-    "main.fead3644.js.map": "/Quotrr/static/js/main.fead3644.js.map",
+    "main.0d0bb914.js.map": "/Quotrr/static/js/main.0d0bb914.js.map",
     "787.1ed0c42c.chunk.js.map": "/Quotrr/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.fead3644.js"
+    "static/js/main.0d0bb914.js"
   ]
 }
