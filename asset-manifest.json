@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/Quotrr/static/js/main.5c88d75b.js",
+    "main.js": "/Quotrr/static/js/main.f75c48ca.js",
     "static/js/787.1ed0c42c.chunk.js": "/Quotrr/static/js/787.1ed0c42c.chunk.js",
     "index.html": "/Quotrr/index.html",
-    "main.5c88d75b.js.map": "/Quotrr/static/js/main.5c88d75b.js.map",
+    "main.f75c48ca.js.map": "/Quotrr/static/js/main.f75c48ca.js.map",
     "787.1ed0c42c.chunk.js.map": "/Quotrr/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.5c88d75b.js"
+    "static/js/main.f75c48ca.js"
   ]
 }
