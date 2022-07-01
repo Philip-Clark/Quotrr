@@ -1,9 +1,9 @@
 export const theme = {
   colors: {
-    card: '#364346',
-    body: '#2a3538',
-    pop: '#22c5a4',
-    text: '#c6cfd1',
+    card: '#5F6B73',
+    body: '#2F3640',
+    pop: '#B2BF4E',
+    text: '#D9D9D9',
   },
   fonts: {
     imports:

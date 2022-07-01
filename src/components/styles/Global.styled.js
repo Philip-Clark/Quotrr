@@ -4,9 +4,10 @@ const GlobalStyles = createGlobalStyle`
 
 *{
   margin:0;
-  color:${({ theme }) => theme.colors.text};
   transition: all 0.5s ease;
-
+  color:${({ theme }) => theme.colors.text};
+  font-family:${({ theme }) => theme.fonts.fontB};
+  
   &::selection{
     background-color: #152023;
   }
@@ -18,7 +19,7 @@ h1{
   position: relative;
   text-align: center;
   margin-bottom: 5rem;
-  font-family:'Oswald', sans-serif;
+  font-family:${({ theme }) => theme.fonts.fontA};
 }
 
 #root{
@@ -54,13 +55,14 @@ footer{
   flex-direction: row;
   justify-content: center;
   align-content: space-evenly;
-  
-}
 
-a{
-  opacity: 30%;
-  margin: 0 0.625rem;
-  color:${({ theme }) => theme.colors.text};
+  a{
+    opacity: 30%;
+    margin: 0 0.625rem;
+    text-decoration: none;
+    color:${({ theme }) => theme.colors.text};
+    font-family:${({ theme }) => theme.fonts.fontA};
+  }
 }
 
 
